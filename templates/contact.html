@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block title %}{% endblock title %}
+
+{% block body %}
+<style>
+.heading{
+  position:relative;
+  margin: 10px;
+  text-align: center;
+  color: blueviolet;
+}
+.container{
+  margin: auto;
+  color: blue;
+}
+</style>
+
+<img src="https://source.unsplash.com/1600x500/?phone,contact" class="d-block w-100" alt="...">
+<div class="heading"><h1>Contact Us</h1></div>
+
+<form method="post" action="/contact">
+  {% csrf_token %}
+<div class="container">
+<div class="mb-3">
+  <label for="name" class="form-label">Enter your name</label>
+  <input type="text" class="form-control" name="name" id="name" placeholder="Enter your name">
+</div>
+<div class="mb-3">
+  <label for="email" class="form-label">Enter your email</label>
+  <input type="email" class="form-control" name="email" id="email" placeholder="Email address">
+</div>
+<div class="mb-3">
+  <label for="phone" class="form-label">Enter your phone number</label>
+  <input type="Number" class="form-control" name="phone" id="phone" placeholder="Enter your phone number">
+</div>
+<div class="mb-3">
+  <label for="query" class="form-label">Ask your query</label>
+  <textarea class="form-control" name="query" id="query" rows="3"></textarea>
+</div>
+<button class="btn btn-primary" type="submit">Submit</button>
+</form></div>
+{% endblock body %}
+
+
